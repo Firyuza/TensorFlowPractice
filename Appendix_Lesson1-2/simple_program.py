@@ -50,26 +50,9 @@ def run(data):
 
     return
 
-def run_eager_execution():
-    tf.enable_eager_execution()
-
-    tensor = tf.range(10)
-    tf.print("tensors:", tensor,  output_stream=sys.stdout)
-    # tensors: [0 1 2 ... 7 8 9]
-
-    print(np.square(tensor))
-    # [ 0  1  4  9 16 25 36 49 64 81]
-
-    tensor = tf.square(tensor)
-    tf.print("tensors:", tensor, output_stream=sys.stdout)
-    # tensors: [0 1 4 ... 49 64 81]
-
-    tf.disable_eager_execution()
-
-    return
-
-run_eager_execution()
-
 run({'v1': [1, 2, 3],
      'v2': [4, 5, 6]})
+
+
+
 
