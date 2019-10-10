@@ -26,7 +26,7 @@ def run(data):
         tf.summary.scalar('distance', distance)
 
         summary_merged_op = tf.summary.merge_all()
-        tensorboard_writer = tf.summary.FileWriter('./logs', tf.get_default_graph())
+        tensorboard_writer = tf.summary.FileWriter('./logs', graph)
 
     if USE_GPU:
         gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=GPU_MEMORY_FRACTION)

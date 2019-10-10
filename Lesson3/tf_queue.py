@@ -133,7 +133,9 @@ def test_batch_Coordinator():
         print(image_path_output, label_output)
 
     coordinator.request_stop()
+    session.run(queue.close(cancel_pending_enqueues=True))
     coordinator.join(enqueue_threads)
+    session.close()
 
     return
 
@@ -167,5 +169,8 @@ def test_Coordinator():
 
     coordinator.request_stop()
     coordinator.join(enqueue_threads)
+    session.close()
 
     return
+
+test_batch_Coordinator()
