@@ -10,6 +10,7 @@ IMAGE_LABELS = [1] * len(IMAGE_PATHS)
 BATCH_SIZE = 4
 PREFETCH_BUFFER_SIZE = BATCH_SIZE
 IMAGE_CHANNEL_SIZE = 3
+IMAGE_SIZE = 256
 
 def read_and_augmment_image_via_python(filename, label):
     def read_cv2(path_):
@@ -19,17 +20,19 @@ def read_and_augmment_image_via_python(filename, label):
         return image
 
     img_tensor = tf.py_func(read_cv2, [filename], np.uint8)
-    img_tensor.set_shape((None, None, 3))
-    img_final = tf.image.resize(img_tensor, [256, 256])
+    img_tensor.set_shape((None, None, IMAGE_CHANNEL_SIZE))
+    img_final = tf.image.resize(img_tensor, [IMAGE_SIZE, IMAGE_SIZE])
     img_final = img_final / 255.0
 
     return img_final, label
 
 def read_and_augmment_image(filename, label):
     file_contents = tf.io.read_file(filename)
+
     img_tensor = tf.image.decode_jpeg(file_contents, channels=IMAGE_CHANNEL_SIZE)
     img_tensor.set_shape((None, None, IMAGE_CHANNEL_SIZE))
-    img_final = tf.image.resize(img_tensor, [256, 256])
+
+    img_final = tf.image.resize(img_tensor, [IMAGE_SIZE, IMAGE_SIZE])
     img_final = img_final / 255.0
 
     return img_final, label
@@ -39,12 +42,11 @@ def test_dataset_api():
 
     dataset = dataset.map(map_func=read_and_augmment_image,
                           num_parallel_calls=tf.data.experimental.AUTOTUNE)
-
-    dataset = dataset.shuffle(buffer_size=len(IMAGE_PATHS))
     dataset = dataset.batch(batch_size=BATCH_SIZE)
 
+    dataset = dataset.shuffle(buffer_size=len(IMAGE_PATHS))
 
-    dataset = dataset.prefetch(buffer_size=PREFETCH_BUFFER_SIZE)
+    dataset = dataset.prefetch(buffer_size=tf.data.experimental.AUTOTUNE)
 
     for image, label in dataset:
         print(label.numpy())
