@@ -1,2 +1,8 @@
 
 \.idea/
+
+Lesson6/__pycache__/
+
+Lesson6/static_graph_tf_data/__pycache__/
+
+Lesson6/static_graph_tf_queue/__pycache__/
