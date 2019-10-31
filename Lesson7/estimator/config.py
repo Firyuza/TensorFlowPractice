@@ -15,6 +15,8 @@ cfg.train.image_size = 32
 cfg.train.image_channels = 3
 cfg.train.batch_size = 32
 cfg.train.epoch_size = 5000
+cfg.train.nrof_epochs = 50
+cfg.train.validation_steps = 500
 cfg.train.nrof_threads = 1
 
 cfg.train.mu = np.asarray([[[125.306918046875, 122.950394140625, 113.86538318359375]]])
@@ -34,5 +36,5 @@ cfg.train.augmentation_probability = 0.4
 
 cfg.train.restore_model_path = ''
 
-cfg.train.logs_base_dir = './logs'
+cfg.train.logs_base_dir = './logs/'
 cfg.train.models_base_dir = './models/'
