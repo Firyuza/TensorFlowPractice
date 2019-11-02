@@ -11,4 +11,5 @@ KFU course for master
 6. Data Input Pipeline: TensorFlow Queue (*Lesson3*)
 7. Data Input Pipeline:TensorFlow Queue: multithreading (*Lesson4*)
 8. Data Input Pipeline: tf.data API and Performance (*Lesson5*)
-9. Image Classification: TF Queue (*Lesson6*)
+9. Image Classification: TF Queue and tf.data (*Lesson6*)
+10. High Level API: Keras & Estimator (*Lesson7*)
