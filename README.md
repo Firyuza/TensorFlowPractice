@@ -13,3 +13,4 @@ KFU course for master
 8. Data Input Pipeline: tf.data API and Performance (*Lesson5*)
 9. Image Classification: TF Queue and tf.data (*Lesson6*)
 10. High Level API: Keras & Estimator (*Lesson7*)
+11. TensorFlow 1.x: Tricks, Pitfalls and Workarounds (*Lesson8, Appendix_Lesson8*)
