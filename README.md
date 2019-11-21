@@ -16,7 +16,6 @@ KFU course for master
 9. Image Classification: TF Queue and tf.data (*Lesson6*)
 10. High Level API: Keras & Estimator (*Lesson7*)
 11. TensorFlow 1.x: Tricks, Pitfalls and Workarounds (*Lesson8, Appendix_Lesson8*)
-
-###TensorFlow 2.0 module
+### TensorFlow 2.0 module
 12. TensorFlow 2.0 Introduction: Comparison with TensorFlow 1.x, AutoGraph, 
 Build Model, Custom Layers/Model/Loss/Accuracy/Callbacks, tf.GradientTape (*Lesson9*)
