@@ -1,5 +1,7 @@
-# TensorFlowPractice
+# TensorFlow 1.x & 2.0
 KFU course for master
+
+![alt text](TF.png)
 
 ## Syllabus
 1. Introduction (*Lesson1*)
