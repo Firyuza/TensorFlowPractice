@@ -1,5 +1,5 @@
 # TensorFlow 1.x & 2.0
-KFU course for master
+KFU course for Master
 
 ![TF](kfu_logo.png)
 
