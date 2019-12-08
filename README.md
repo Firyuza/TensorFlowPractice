@@ -22,3 +22,4 @@ KFU course for Master
 12. TensorFlow 2.0 Introduction: Comparison with TensorFlow 1.x, AutoGraph, 
 Build Model, Custom Layers/Model/Loss/Accuracy/Callbacks, tf.GradientTape (*Lesson9*)
 13. Image Classification: Custom model, custom accuracy (*Lesson10, Lesson11*)
+14. Logging and Visualization: TensorBoard, TensorBoard.dev, MLflow and Tensorspacejs (*Lesson12*)
