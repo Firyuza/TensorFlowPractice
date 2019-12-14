@@ -22,3 +22,26 @@ def save_variables(self, network, optimizer, model_dir, step):
     file.close()
 
     return
+
+def load_variables(self):
+    if cfg.train.restore_model_path != '':
+        print('Loading variables')
+
+        file = h5py.File(cfg.train.restore_model_path, 'r')
+        weight = []
+        for i in range(len(file.keys())):
+            weight.append(file['weight' + str(i)].value)
+        self.network.set_weights(weight)
+
+        file = h5py.File(cfg.train.restore_model_path.replace('model-', 'optimizer-'), 'r')
+        weight = []
+        for i in range(1):#len(file.keys())):
+            weight.append(file['weight' + str(i)].value)
+        self.optimizer.set_weights(weight)
+
+        step = int(cfg.train.restore_model_path.split('.h5')[0].split('-')[-1])
+        self.optimizer.iterations.assign(step)
+    else:
+        step = 0
+
+    return step
