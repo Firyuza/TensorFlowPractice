@@ -23,3 +23,4 @@ KFU course for Master
 Build Model, Custom Layers/Model/Loss/Accuracy/Callbacks, tf.GradientTape (*Lesson9*)
 13. Image Classification: Custom model, custom accuracy (*Lesson10, Lesson11*)
 14. Logging and Visualization: TensorBoard, TensorBoard.dev, MLflow and Tensorspacejs (*Lesson12*)
+15. C++ Op and Tricks, Pitfalls and Workarounds of TF 2.0 (*Lesson13*)
